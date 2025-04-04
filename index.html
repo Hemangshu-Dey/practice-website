@@ -19,18 +19,29 @@
   <body>
     <section class="header">
       <nav>
-        <a href="index.html"><img src="images/logo.png" /></a>
-        <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
-          <ul>
+        <!-- <a href="index.html"><img src="images/logo.png" /></a> -->
+        <div class="nav-links">
+          <ul class="sidebar">
+            <li onclick="hideSidebar()">
+              <a class="fa fa-times"></a>
+            </li>
             <li><a href="#">HOME</a></li>
             <li><a href="#">ABOUT</a></li>
             <li><a href="#">COURSE</a></li>
             <li><a href="#">BLOG</a></li>
             <li><a href="#">CONTACT</a></li>
           </ul>
+          <ul>
+            <li class="hideOnMobile"><a href="#">HOME</a></li>
+            <li class="hideOnMobile"><a href="#">ABOUT</a></li>
+            <li class="hideOnMobile"><a href="#">COURSE</a></li>
+            <li class="hideOnMobile"><a href="#">BLOG</a></li>
+            <li class="hideOnMobile"><a href="#">CONTACT</a></li>
+            <l1 class="menu-button" onclick="showSidebar()"
+              ><a class="fa fa-bars"></a
+            ></l1>
+          </ul>
         </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
       <div class="text-box">
         <h1>World's Biggest University</h1>
@@ -202,19 +213,20 @@
         <i class="fa-brands fa-facebook-f"></i>
         <i class="fa-brands fa-twitter"></i>
         <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-linkedin-in"></i> 
+        <i class="fa-brands fa-linkedin-in"></i>
       </div>
     </section>
 
     <script>
-      var navLinks = document.getElementById("navLinks");
 
-      function showMenu() {
-        navLinks.style.right = "0";
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
       }
 
-      function hideMenu() {
-        navLinks.style.right = "-200px";
+      function hideSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
       }
     </script>
   </body>
